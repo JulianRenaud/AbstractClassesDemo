@@ -10,9 +10,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            /*
-             * Todo follow all comments!! 
-             */
+            // Todo follow all comments!!
 
             #region Vehicles
 
@@ -46,7 +44,64 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            #endregion
+
+
+            
+            var vehicles = new List<Vehicle>();
+
+            var c1 = new Car()
+            {
+                Year = "2003",
+                Make = "Jaguar",
+                Model = "X-TYPE",
+                MaxPeople = 5
+            };
+
+            var m1 = new Motorcycle()
+            {
+                Year = "2020",
+                Make = "Harley-Davidson",
+                Model = "Street Glide Special",
+                HasStorageBasket = false
+            };
+            Vehicle v1 = new Car()
+            {
+                Year = "2023",
+                Make = "Jaguar",
+                Model = "F-TYPE R",
+                MaxPeople = 2
+            };
+            Vehicle v2 = new Motorcycle()
+            {
+                Year = "2019",
+                Make = "Yamaha",
+                Model = "R15",
+                HasStorageBasket = false
+            };
+            
+
+            vehicles.Add(c1);
+            vehicles.Add(m1);
+            vehicles.Add(v1);
+            vehicles.Add(v2);
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine(vehicle.Year);
+                Console.WriteLine(vehicle.Make);
+                Console.WriteLine(vehicle.Model);
+                Console.WriteLine("--------------------------------------------------");
+            }
+
+            Console.WriteLine("Car one: ");
+            c1.DriveAbstract();
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Motorcycle one: ");
+            m1.DriveAbstract();
+            m1.DriveVirtual();
+            Console.WriteLine("--------------------------------------------------");
             Console.ReadLine();
         }
     }
